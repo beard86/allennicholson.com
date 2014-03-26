@@ -3,7 +3,7 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
+    <CHRIS CAMPLIN> -- <DEVELOPER / DESIGNER> -- <@chriscamplin>
 
 # THANKS
 

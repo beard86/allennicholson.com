@@ -17,7 +17,7 @@ body { margin: 0; font-size: 1em; line-height: 1.4;}
 ::selection { background: #ff9; color: #000; text-shadow: none; }
 
 a { color: #82d2ff; text-decoration: none; }
-a:hover { color: #e84b98; }
+a:hover { color: #3862CE; }
 a:focus { outline: thin dotted; }
 a:hover, a:active { outline: 0; }
 
@@ -43,13 +43,9 @@ body {
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
-    text-shadow: none;
 }
 
 /*
@@ -131,11 +127,10 @@ h1 a:hover {
 
 
 h2 {
-    color: #fff;
+    color: #3862CE;
     font-weight: bold;
     font-size: 1.5em;
     letter-spacing: -0.05em;
-    text-shadow: 0 0 2px #555;
     position: relative;
 }
 
@@ -349,7 +344,7 @@ header .top p {
 
 header .top p a {
     color: #222;
-    border-bottom: 2px solid #e84b98;
+    border-bottom: 2px solid #3862CE;
     padding: 2px;
     font-weight: bold;
       -webkit-transition: .4s;
@@ -360,7 +355,7 @@ header .top p a {
 
 header .top p a:hover {
     border-bottom: 2px solid #fff;
-    background: #e84b98;
+    background: #3862CE;
     color: #fff;
 }
 

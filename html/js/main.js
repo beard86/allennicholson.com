@@ -1,14 +1,9 @@
-/*=====================
-phil@riotindustries.com
-March 2013
-=====================*/
-
 
 var thePortfolio;
 var hash = window.location.hash.slice(1).replace(/%20/g, " ");
 
 $(document).ready(function(){
-    //console.log('document ready');
+    console.log('document ready');
     //mixpanel.track('Document Ready');
     $('.shuffle').randomImage();	
     //set variables to determine if scripts for a particular environment need to be called.
@@ -18,12 +13,13 @@ $(document).ready(function(){
 
     $('body').addClass('mobile'); //assume mobile! mobile first, yo.
 
-    universalController();
-
     environmentChecker();
+    console.log('environmentChecker ready');
     $(window).resize(function(){
         environmentChecker();
     });
+
+    universalController();
 
 }); //document.ready
 
@@ -31,8 +27,7 @@ $(document).ready(function(){
 /*==( ^ Checks to see if Mobile, Tablet, or Desktop )======================================================*/
 
 function environmentChecker() {
-    //console.log('environmentChecker `fired');
-
+    console.log('environmentChecker `fired');
     if ($(window).width() >= 960) {
         if (tabletEnvironment == 0){
             tabletEnvironment = 1;
@@ -43,7 +38,7 @@ function environmentChecker() {
             //desktopController(); 
         }; //desktopcheck
         $('body').removeClass('mobile').removeClass('tablet').addClass('desktop');
-        mixpanel.track('Desktop Environment');
+        //mixpanel.track('Desktop Environment');
     } else if ($(window).width() >= 600) {
         if (tabletEnvironment == 0){
             tabletEnvironment = 1;
@@ -68,10 +63,10 @@ DOM elements to run on.
 )======================================================*/
 
 function universalController(){
-
+    console.log('universalController fired')
     mobileNavHelper();
     navHandler();
-    panelHandler();
+    //panelHandler();
     projectHandler();
     getPortfolio();
 
