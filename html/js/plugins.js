@@ -28,7 +28,7 @@
         defaults: {
             //you can change these defaults to your own preferences.
             path: 'img/', //change this to the path of your images
-            myImages: [ 'mac_book_pro.jpg', 'mac_book_pro.jpg'] //put image names in this bracket. ex: 'harold.jpg', 'maude.jpg', 'etc'
+            myImages: [ 'mac_book_pro.jpg', 'mac_book_pro2.jpg', 'mac_book_pro3.jpg', 'mac_book_pro5.jpg'] //put image names in this bracket. ex: 'harold.jpg', 'maude.jpg', 'etc'
 
         }           
     }
