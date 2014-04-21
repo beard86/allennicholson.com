@@ -4,13 +4,27 @@ var hash = window.location.hash.slice(1).replace(/%20/g, " ");
 
 $(document).ready(function(){
     
-jQuery.validator.addMethod('answercheck', function (value, element) {
+/*jQuery.validator.addMethod('answercheck', function (value, element) {
         return this.optional(element) || /^\bcat\b$/.test(value);
-    }, "type the correct answer -_-");
+    }, "type the correct answer -_-"); comment out for locall dev*/
 
 // validate contact form
 $(function() {
-    $('#contact').validate({
+    var former = $('#form-wrap');
+    former.hide();
+    $('a#contact-form, a#form-open').click(function() {
+        former.fadeIn('slow');
+    })
+    $('span.close').click(function() {
+        former.fadeOut('fast');
+    })
+    $('html').click(function() {
+        former.stop().fadeOut('fast');
+    });
+    former.click(function(event) {
+        event.stopPropagation();
+    });
+    /*$('#contact').validate({
         rules: {
             name: {
                 required: true,
@@ -64,7 +78,7 @@ $(function() {
                 }
             });
         }
-    });
+    });*/
 });
 
 
@@ -110,10 +124,10 @@ function environmentChecker() {
             tabletController();
         }; //tabletcheck
         $('body').removeClass('mobile').removeClass('desktop').addClass('tablet');
-        mixpanel.track('Tablet Environment');
+        //mixpanel.track('Tablet Environment');
     } else {
         $('body').removeClass('tablet').removeClass('desktop').addClass('mobile');
-        mixpanel.track('Mobile Environment');
+        //mixpanel.track('Mobile Environment');
     }; //window.width
 
     heightSetter();
@@ -132,8 +146,8 @@ function universalController(){
     mobileNavHelper();
     navHandler();
     //panelHandler();
-    projectHandler();
-    getPortfolio();
+    //projectHandler();
+    //getPortfolio();
 
 }; //universalController
 
@@ -152,7 +166,7 @@ Emulates facebook/other social network behaviour. In the future, this might want
 )======================================================*/
 
 function mobileNavHelper(){
-    //console.log('mobileNavHelper fired');
+    console.log('mobileNavHelper fired');
     $('header').append('<div class="mobilenavcontainer"></div>');
     $('header nav').clone().appendTo('.mobilenavcontainer');
 
@@ -172,8 +186,8 @@ function mobileNavHelper(){
 }; //mobileNavHelper
 
 function showMobileNav(){
-    //console.log('showMobileNav fired');
-    mixpanel.track('Mobile Nav Opened');
+    console.log('showMobileNav fired');
+    //mixpanel.track('Mobile Nav Opened');
     $('.mobilenavcontainer').addClass('open');
     $('.mobilenavbutton').addClass('open');
     //$('header').addClass('topspin')
@@ -191,8 +205,8 @@ function showMobileNav(){
 
 
 function hideMobileNav(){
-    //console.log('hideMobileNav fired');
-    mixpanel.track('Mobile Nav Hidden');
+    console.log('hideMobileNav fired');
+    //mixpanel.track('Mobile Nav Hidden');
     clearTimeout(timeouter);
     $('.mobilenavcontainer').removeClass('open');
     $('.mobilenavbutton').removeClass('open');
@@ -224,20 +238,20 @@ function navHandler(){
                 } else {
                     $('html, body').stop().animate({'scrollTop':$('#'+$(this).html()).offset().top-90}, {duration: 1500, easing:'easeOutExpo'});
                 }; //if mobile
-                mixpanel.track('Nav to: '+$(this).html());
+                //mixpanel.track('Nav to: '+$(this).html());
             } else {
-                $('header').addClass('topspin');
-                mixpanel.track('Spinning Top');
+                //$('header').addClass('topspin');
+                //mixpanel.track('Spinning Top');
             }
             return false;
         }; //if it's not, like, an actual link.
     })
-    $('.top').click(function(){
+    /*$('.top').click(function(){
         $('header').toggleClass('topspin');
     })
     $('.front').click(function(){
         $('header').toggleClass('topspin');
-    })
+    })*/
     $('.top').find('a').click(function(evt){
         evt.stopPropagation();
     })
@@ -251,7 +265,7 @@ function parallaxHandler(){
         //console.log($(window).scrollTop());
         var scrollVar = $(window).scrollTop();
         $('section#about').children('video').css({'top': 1.5*scrollVar });
-        $('section#about .inner').children('h2').css({'top': .7*scrollVar });
+        //$('section#about .inner').children('h2').css({'top': .7*scrollVar });
 
         if (scrollVar > 350) {
             $('header').addClass('fixedtop');
@@ -360,14 +374,14 @@ function projectHandler(){
             mixpanel.track('Close Project', {
                 'Project Name': $(this).data('name')
             });
-            mixpanel.track('Close Project: '+$(this).data('name'));
+            //mixpanel.track('Close Project: '+$(this).data('name'));
         } else {
             $(this).addClass('expanded');
             $(this).siblings('.expanded').removeClass('expanded');
             loadProject($(this), $(this).data('name'));
-            mixpanel.track('Open Project', {
+           /* mixpanel.track('Open Project', {
                 'Project Name': $(this).data('name')
-            });
+            });*/
         }
     }); //on .project click
     $(document).on('click', '.close-project', function(){

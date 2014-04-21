@@ -21,20 +21,22 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+            <img class="shuffle" src="img/px.gif" alt="MacBookPro">
 
         <!-- Add your site or application content here -->
     <div id="container">
-        <header><a class="mobilenavbutton">Explore</a>
+        <header>
             <div class="inner">
                 <div class="front">
                     <div class="inner clearfix">
                         <h1><a href="index.html">Solutions for Mac</a></h1>
                         <nav>
-                            <a href="index.html">About</a>
-                            <a href="training.html">Training</a>
-                            <a href="data-recovery.html">Data Recovery</a>
-                            <a href="repair.html">Repairs</a>
-                            <a href="quick-tips.html">Quick tips</a>
+                            <a href="#about">About</a>
+                            <a href="#training">Training</a>
+                            <a href="#data-recovery">Data Recovery</a>
+                            <a href="#repair">Repairs</a>
+                            <a href="#quick-tips">Quick tips</a>
+                            <a id="contact-form" href="#">Contact</a>
                             <a href="http://christophercamplin.com/development/">Need a website?</a>
                         </nav>
                     </div><!-- /.inner -->
@@ -45,19 +47,8 @@
                     </div><!-- /.inner -->
                 </div><!-- /.top -->
             </div><!-- /.inner -->
-        <div class="mobilenavcontainer">
-            <nav>
-                <a href="index.html">About</a>
-                <a href="training.html">Training</a>
-                <a href="data-recovery.html">Data Recovery</a>
-                <a href="repair.html">Repairs</a>
-                <a href="quick-tips.html">Quick tips</a>
-                <a href="http://christophercamplin.com/development/">Need a website?</a>
-            </nav>
-        </div>
     </header>
         <section id="about">
-            <img class="shuffle" src="img/px.gif" alt="MacBookPro">
             <div class="inner">
                 <h2>Welcome to Solutions For Mac</h2>
                 <p>Solutions For Mac offer a complete support service which is guaranteed to be followed through to completion for all our clients.</p>
@@ -71,14 +62,83 @@
                 <p>Feel free to have a browse around our site and look at our competitively priced packages available for Home or Business.</p>
             </div><!-- /.inner -->
         </section><!-- /#about -->
+        <section id="training">
+            <div class="inner">
+                <h2>Training</h2>
+                <p>We offer a great package for those starting out with Apple products to get you roaring ahead with confidence with your new iThing</p>
+
+                <p>We also cater for those who are already familiar with OS X and IOS. <a href="#" id="form-open">Send us your details</a> and we will get back to you.</p> 
+            </div><!-- /.inner -->
+        </section><!-- /#training -->
+        <section id="data-recovery">
+            <div class="inner">
+                <h2>Data Recovery</h2>
+                <p>Data Disaster can happen to anyone, At some stage we have all accidentally deleted a file or forgotten to do a backup. </p>
+
+                <p>We are here to help in your hour of need.  </p>
+
+                <p>We have over 80% success rate with recovering data. Also, If we don’t get your data back, You don’t pay us a penny.</p>
+
+            </div><!-- /.inner -->
+        </section><!-- /#data-recovery -->
+        <section id="repair">
+            <div class="inner">
+                <h2>Repairs</h2>
+                <p>We offer both in warranty and out of warranty repairs for all your apple equipment. We take particular care to ensure that Genuine Apple parts are always used where a replacement needs to be done.</p>
+                <p>Where a repair need to be done where data loss could occur, We will always check if backups have been created before we proceed with the work.</p>
+
+            </div><!-- /.inner -->
+        </section><!-- /#repair -->
+        <section id="quick-tips">
+            <div class="inner">
+                <h2>Facebook Page Feed</h2>
+                <p>.........</p>
+                <p>.............</p>
+            </div><!-- /.inner -->
+        </section><!-- /#repair -->
+        <div id="form-wrap">
+            <span class="close">&times;</span>
+            <h3>Please get in touch with some information about your query &amp; I will get back to you promptly</h3>
+            <form id="contact" name="contact" method="post" novalidate="novalidate">
+                <fieldset>
+                    <label for="name" id="name">Name<span class="required">*</span>
+                    </label>
+                    <input type="text" name="name" id="name" size="30" value="" required="">
+                    <label for="email" id="email">Email<span class="required">*</span>
+                    </label>
+                    <input type="text" name="email" id="email" size="30" value="" required="">
+                    <label for="phone" id="phone">Phone</label>
+                    <input type="text" name="phone" id="phone" size="30" value="">
+                    <label for="Message" id="message">Message<span class="required">*</span>
+                    </label>
+                    <textarea name="message" id="message" required=""></textarea>
+                    <label for="Answer" id="answer">Name the small house pet that says “<i>meow</i>“<span class="required">*</span>
+                    </label>
+                    <input type="text" name="answer" value="" required=""></br>
+                    <input id="submit" type="submit" name="submit" value="Send">
+                </fieldset>
+                </form>
+                <div id="success">
+                    <span class="green textcenter">
+                        <p>Your message was sent successfully! I will be in touch as soon as I can.</p>
+                    </span>
+                </div>
+
+                <div id="error">
+                    <span>
+                        <p>Something went wrong, try refreshing and submitting the form again.</p>
+                    </span>
+                </div>
+            </div>
 
 
 
 
     </div><!-- /#container -->
-        <script src="http//code.jquery.com/jquery-latest.min.js"></script>
-        <script src="http//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
-        <script src="http//cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
+        <!--script src="http://code.jquery.com/jquery-latest.min.js"></script-->
+        <script src="js/vendor/jquery-1.9.1.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.form/3.32/jquery.form.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.11.1/jquery.validate.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 

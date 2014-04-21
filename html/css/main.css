@@ -35,7 +35,21 @@ body {
     font-size: 1em;
     line-height: 1.4;
 }
+img.shuffle {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
 
+}
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection rule sets have to be separate.
@@ -122,8 +136,7 @@ h1 a {
 }
 
 h1 a:hover {
-    color: #fff;
-    background: #222;
+    color: #3862CE;
 }
 
 
@@ -264,10 +277,10 @@ header {
 margin-left: 50%;
 left: -45%;
     height: 90px;
-      -webkit-perspective: 3000px;
+      /*-webkit-perspective: 3000px;
          -moz-perspective: 3000px;
            -o-perspective: 3000px;
-              perspective: 3000px;
+              perspective: 3000px;*/
       -webkit-transition: .4s;
          -moz-transition: .4s;
            -o-transition: .4s;
@@ -275,10 +288,10 @@ left: -45%;
 }
 
 header > .inner {
-      -webkit-transform-style: preserve-3d;
+     /* -webkit-transform-style: preserve-3d;
          -moz-transform-style: preserve-3d;
            -o-transform-style: preserve-3d;
-              transform-style: preserve-3d;
+              transform-style: preserve-3d;*/
       -webkit-transition: .4s;
          -moz-transition: .4s;
            -o-transition: .4s;
@@ -327,6 +340,8 @@ header .front {
          -moz-transform: translateZ( 45px );
            -o-transform: translateZ( 45px );
               transform: translateZ( 45px );
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
 }
 
 header .top {
@@ -381,7 +396,7 @@ header.fixedtop {
               transform: translateZ( 45px );
     width: 50px;
     height: 40px;
-    background: transparent url(/assets/images/mobile-nav-button.png) top left no-repeat;
+    background: transparent url(../img/mobile-nav-button.png) top left no-repeat;
     line-height: 1500%;
     overflow: hidden;
     cursor: pointer;
@@ -392,46 +407,67 @@ header.fixedtop {
 }
 
 
-.mobilenavbutton:hover,
+/*.mobilenavbutton:hover,
 .mobilenavbutton.open {
     background-position: 0px -40px;
-}
+}*/
 
 
 /*==================================================================
 =About
 ----------------------------------------------------------------- */
 
-section#about {
+section {
     width: 100%;
-    background: #222;
     position: relative;
     height: 100%;
     overflow: hidden;
     font-size: 1em;
 }
 
-section#about > img {
+section > img {
     position: absolute;
     margin-top: -250px;
     min-width: 100%;
 }
 
-section#about > .inner {
+section > .inner {
     position: relative;
-    width: 90%;
+    width: 80%;
     margin: auto;
     top: 0px;
-    height: 500px;
-    margin-top: 130px;
+      margin-top: 130px;
     text-align: right;
     background: rgb(0, 0, 0);
-    background: rgba(0, 0, 0, 0.5);
-   padding: 2em;
-
+    background: rgba(0, 0, 0, 0.75);
+    padding: 2em;
+    z-index: 1;
 }
 
 /* FORM ======================= */
+#form-wrap {
+    position: fixed;
+    width: 81%;
+    height: 500px;
+    margin-top: -250px;
+    margin-left:-610px;
+    left: 50%;
+    top: 50%;
+    padding: 25px;
+    background: url(../img/allen-nicholson.jpg) no-repeat 879px 80px #000;
+    color: #fff;
+    z-index: 123;
+}
+#form-wrap h3 { margin: 0; }
+#form-wrap span.close {
+  position: absolute;
+  right: 5px;
+  top: 0;
+  z-index: 1;
+  line-height: 24px;
+  font-size: 40px;
+  cursor: pointer;
+}
 form {
     margin:0
 }
@@ -443,7 +479,7 @@ form label {
     line-height:13px;
     font-size:1.3rem;
     line-height:1.3rem;
-    color:#000;
+    color:#fff;
 }
 form label.error {
     margin-top:-1em;
@@ -466,9 +502,6 @@ form input[type="text"], form input[type="password"], form input[type="date"], f
     -webkit-box-shadow:none;
     background:#e6e6e6;
     border:1px solid #191919;
-    -moz-border-radius:0.2em 0.2em 0.2em 0.2em;
-    -webkit-border-radius:0.2em 0.2em 0.2em 0.2em;
-    border-radius:0.2em 0.2em 0.2em 0.2em
 }
 form input[type="text"]:focus, form input[type="password"]:focus, form input[type="date"]:focus, form input[type="datetime"]:focus, form input[type="datetime-local"]:focus, form input[type="month"]:focus, form input[type="week"]:focus, form input[type="email"]:focus, form input[type="number"]:focus, form input[type="search"]:focus, form input[type="tel"]:focus, form input[type="time"]:focus, form input[type="url"]:focus, form textarea:focus {
     border-color:#191919;
