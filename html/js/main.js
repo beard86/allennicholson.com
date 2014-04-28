@@ -4,9 +4,9 @@ var hash = window.location.hash.slice(1).replace(/%20/g, " ");
 
 $(document).ready(function(){
     
-/*jQuery.validator.addMethod('answercheck', function (value, element) {
+jQuery.validator.addMethod('answercheck', function (value, element) {
         return this.optional(element) || /^\bcat\b$/.test(value);
-    }, "type the correct answer -_-"); comment out for locall dev*/
+    }, "type the correct answer -_-"); 
 
 // validate contact form
 $(function() {
@@ -14,17 +14,20 @@ $(function() {
     former.hide();
     $('a#contact-form, a#form-open').click(function() {
         former.fadeIn('slow');
+        $('body').prepend('<div id="transbg"></div>');
     })
     $('span.close').click(function() {
         former.fadeOut('fast');
+        $('#transbg').fadeOut('fast');
     })
     $('html').click(function() {
         former.stop().fadeOut('fast');
+        $('#transbg').fadeOut('fast');
     });
     former.click(function(event) {
         event.stopPropagation();
     });
-    /*$('#contact').validate({
+    $('#contact').validate({
         rules: {
             name: {
                 required: true,
@@ -78,7 +81,7 @@ $(function() {
                 }
             });
         }
-    });*/
+    });
 });
 
 
